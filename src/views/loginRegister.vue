@@ -2,7 +2,7 @@
 	<div class="login-register">
 		<div class="contain">
 			<div class="big-box" :class="{active:isLogin}">
-				<div class="big-contain" v-if="isLogin">
+				<div class="big-contain" key="bigContainLogin" v-if="isLogin">
 					<div class="btitle">账户登录</div>
 					<div class="bform">
 						<input type="email" placeholder="邮箱" v-model="form.useremail">
@@ -12,7 +12,7 @@
 					</div>
 					<button class="bbutton" @click="login">登录</button>
 				</div>
-				<div class="big-contain" v-else>
+				<div class="big-contain" key="bigContainRegister" v-else>
 					<div class="btitle">创建账户</div>
 					<div class="bform">
 						<input type="text" placeholder="用户名" v-model="form.username">
@@ -24,12 +24,12 @@
 				</div>
 			</div>
 			<div class="small-box" :class="{active:isLogin}">
-				<div class="small-contain" v-if="isLogin">
+				<div class="small-contain" key="smallContainRegister" v-if="isLogin">
 					<div class="stitle">你好，朋友!</div>
 					<p class="scontent">开始注册，和我们一起旅行</p>
 					<button class="sbutton" @click="changeType">注册</button>
 				</div>
-				<div class="small-contain" v-else>
+				<div class="small-contain" key="smallContainLogin" v-else>
 					<div class="stitle">欢迎回来!</div>
 					<p class="scontent">与我们保持联系，请登录你的账户</p>
 					<button class="sbutton" @click="changeType">登录</button>
